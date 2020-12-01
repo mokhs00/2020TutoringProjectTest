@@ -2,9 +2,11 @@ package Domain;
 
 public class Member {
 
+    // id
+    // password
     private String name;
     private int age;
-    private int rank;
+    private int rank = 1;
 
     public String getName() {
         return name;

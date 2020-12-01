@@ -1,11 +1,11 @@
 package Domain;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 public class Screening {
 
     private Movie movie;
-    private Date runningTime;
+    private LocalTime runningTime;
     private int ticketedCount;
 
     public Movie getMovie() {
@@ -16,11 +16,11 @@ public class Screening {
         this.movie = movie;
     }
 
-    public Date getRunningTime() {
+    public LocalTime getRunningTime() {
         return runningTime;
     }
 
-    public void setRunningTime(Date runningTime) {
+    public void setRunningTime(LocalTime runningTime) {
         this.runningTime = runningTime;
     }
 
@@ -31,4 +31,4 @@ public class Screening {
     public void setTicketedCount(int ticketedCount) {
         this.ticketedCount = ticketedCount;
     }
-}
+    }

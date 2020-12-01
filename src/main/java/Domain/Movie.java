@@ -1,12 +1,12 @@
 package Domain;
 
 
-import java.util.Date;
+import java.time.LocalTime;
 
 public class Movie {
 
     private String name;
-    private Date runTime;
+    private LocalTime runTime;
     private int ageLimit;
     private String genre; // 장르
 
@@ -18,11 +18,11 @@ public class Movie {
         this.name = name;
     }
 
-    public Date getRunTime() {
+    public LocalTime getRunTime() {
         return runTime;
     }
 
-    public void setRunTime(Date runTime) {
+    public void setRunTime(LocalTime runTime) {
         this.runTime = runTime;
     }
 
