@@ -98,10 +98,12 @@ public class MovieTicketing {
                 if (input == 0) {
                     System.out.println("============[종료 합니다.]============\n");
                     running = false;
+                    sc.close();
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
+            sc.close();
         }
 
 
