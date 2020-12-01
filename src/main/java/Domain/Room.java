@@ -7,6 +7,11 @@ public class Room {
     private int seatCount;
     private ArrayList<Screening> screeningList;
 
+    public Room(int number, int seatCount, ArrayList<Screening> screeningList) {
+        this.number = number;
+        this.seatCount = seatCount;
+        this.screeningList = screeningList;
+    }
 
     public int getNumber() {
         return number;

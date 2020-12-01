@@ -7,8 +7,21 @@ public class Movie {
 
     private String name;
     private LocalTime runTime;
-    private int ageLimit;
+    private int ageLimit = 0;
     private String genre; // 장르
+
+    public Movie(String name, LocalTime runTime, String genre) {
+        this.name = name;
+        this.runTime = runTime;
+        this.genre = genre;
+    }
+
+    public Movie(String name, LocalTime runTime, int ageLimit, String genre) {
+        this.name = name;
+        this.runTime = runTime;
+        this.ageLimit = ageLimit;
+        this.genre = genre;
+    }
 
     public String getName() {
         return name;

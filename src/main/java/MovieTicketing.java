@@ -1,7 +1,9 @@
 import Domain.Member;
 import Domain.Movie;
 import Domain.Room;
+import Domain.Screening;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ public class MovieTicketing {
     public static final Scanner sc = new Scanner(System.in);
 
     // 로그인 했냐 안했냐 무언가. -> Member 변수
-    private static Member loginMember = null;
+    private static Member loginMember = new Member();
     private static boolean running = true;
     private static int input;
 
@@ -19,9 +21,18 @@ public class MovieTicketing {
     private static ArrayList<Movie> movieRepository = new ArrayList<>();
 
     private static ArrayList<Room> roomRepository = new ArrayList<>();
-//    private static
+
 
     public static void main(String[] args) {
+
+
+        movieRepository.add(new Movie("런", LocalTime.of(1, 29), 15, "미스터리, 스릴러"));
+
+        ArrayList<Screening> room1ScreeningList = new ArrayList<>();
+        room1ScreeningList.add(new Screening(movieRepository.get(0), LocalTime.of(14, 0)));
+        roomRepository.add(new Room(1, 30, room1ScreeningList));
+
+
         // TODO : 영화 예매 프로그램 시작하기.
 
         try {
@@ -42,6 +53,10 @@ public class MovieTicketing {
                     }
                     System.out.println("========[영화를 선택해주세요.]========\n");
                     // TODO : 영화 리스트 forEach
+
+                    for (Movie movie : movieRepository) {
+                        System.out.println((movieRepository.indexOf(movie) + 1) + ". " + movie.getName() + " / " + movie.getGenre() + " / " + movie.getRunTime() + " / " + movie.getAgeLimit()+"세 이상");
+                    }
                     System.out.println("0. 취소");
                     System.out.println("\n===============================");
                     input = sc.nextInt();
@@ -58,9 +73,9 @@ public class MovieTicketing {
                     System.out.println("============[로그인]============\n");
                     System.out.print("이름 : ");
                     loginMember.setName(sc.next());
-                    if(memberRepository.stream().anyMatch(m -> m.getName().equals(loginMember.getName()))){
+                    if (memberRepository.stream().anyMatch(m -> m.getName().equals(loginMember.getName()))) {
                         System.out.println("\n로그인 성공!");
-                    }else{
+                    } else {
                         System.out.println("\n등록되지 않은 회원입니다.");
                     }
 

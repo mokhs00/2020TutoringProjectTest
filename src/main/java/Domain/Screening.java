@@ -6,7 +6,13 @@ public class Screening {
 
     private Movie movie;
     private LocalTime runningTime;
-    private int ticketedCount;
+    private int ticketedCount = 0;
+
+    public Screening(Movie movie, LocalTime runningTime) {
+        this.movie = movie;
+        this.runningTime = runningTime;
+
+    }
 
     public Movie getMovie() {
         return movie;
